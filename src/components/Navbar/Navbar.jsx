@@ -99,10 +99,13 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Center: Brand Wordmark Lockup (Always Centered) */}
+        {/* Center: Brand Logo Lockup (Always Centered) */}
         <a href="#" className="navbar-brand" aria-label="House of Urvaah Homepage">
-          <span className="brand-script-text">house of</span>
-          <span className="brand-serif-text">URVAAH</span>
+          <img 
+            src="/assets/logo/house_of_urvaah_logo.png" 
+            alt="House of Urvaah" 
+            className="brand-logo-img" 
+          />
         </a>
 
         {/* Right: Search & Shopping Bag Actions */}

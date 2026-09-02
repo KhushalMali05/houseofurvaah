@@ -27,24 +27,18 @@
 }
 
 .footer-brand-link {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: #000000;
-  line-height: 1;
 }
 
-.footer-script-text {
-  font-family: var(--font-script);
-  font-size: 1.3rem;
-  margin-bottom: -4px;
-}
-
-.footer-serif-text {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  letter-spacing: 0.25em;
-  font-weight: 500;
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-tagline {

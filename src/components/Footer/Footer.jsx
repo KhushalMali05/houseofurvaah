@@ -72,8 +72,11 @@ export default function Footer() {
           {/* Brand Lockup */}
           <div className="footer-brand-col">
             <a href="#" className="footer-brand-link" aria-label="House of Urvaah Home">
-              <span className="footer-script-text">house of</span>
-              <span className="footer-serif-text">URVAAH</span>
+              <img 
+                src="/assets/logo/house_of_urvaah_logo.png" 
+                alt="House of Urvaah" 
+                className="footer-logo-img" 
+              />
             </a>
             <p className="footer-tagline">
               Haute Couture & High Fashion Lookbook. Defined by quiet form and deliberate luxury.

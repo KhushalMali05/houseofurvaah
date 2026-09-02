@@ -26,18 +26,6 @@ const SLIDES = [
     cta: 'Discover Couture',
     ctaLink: '#new-in',
     theme: 'dark'
-  },
-  {
-    id: 3,
-    type: 'video',
-    video: '/assets/video/Video2.mp4',
-    poster: '/assets/images/poster2.jpg',
-    subtitle: 'Editorial Campaign',
-    title: 'METALLIC & SILK',
-    description: 'Intricate threadwork meets minimalist architectural tailoring.',
-    cta: 'View Editorial',
-    ctaLink: '#editorial',
-    theme: 'dark'
   }
 ];
 

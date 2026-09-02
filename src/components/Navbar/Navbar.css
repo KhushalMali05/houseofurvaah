@@ -79,9 +79,9 @@
 }
 
 .brand-logo-img {
-  height: 68px;
+  height: 115px;
   width: auto;
-  max-width: 320px;
+  max-width: 380px;
   object-fit: contain;
   display: block;
   transition: opacity 0.3s ease, filter 0.3s ease;
@@ -208,7 +208,7 @@
 
 @media (max-width: 768px) {
   .navbar-container {
-    padding: 0.8rem 1.25rem;
+    padding: 0.6rem 1.25rem;
   }
   .hamburger-label {
     display: none;
@@ -220,30 +220,30 @@
     font-size: 1rem;
   }
   .brand-logo-img {
-    height: 52px;
-    max-width: 240px;
+    height: 80px;
+    max-width: 280px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-container {
-    padding: 0.6rem 0.75rem;
+    padding: 0.5rem 0.75rem;
   }
   .navbar-brand {
     max-width: calc(100% - 110px);
   }
   .brand-logo-img {
-    height: 44px;
-    max-width: 200px;
+    height: 65px;
+    max-width: 220px;
   }
 }
 
 @media (max-width: 360px) {
   .navbar-container {
-    padding: 0.5rem 0.5rem;
+    padding: 0.4rem 0.5rem;
   }
   .brand-logo-img {
-    height: 38px;
-    max-width: 170px;
+    height: 55px;
+    max-width: 180px;
   }
 }

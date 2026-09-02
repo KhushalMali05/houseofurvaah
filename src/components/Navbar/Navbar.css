@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 3rem;
+  padding: 0.6rem 3rem;
   max-width: 1800px;
   margin: 0 auto;
   position: relative;
@@ -79,21 +79,16 @@
 }
 
 .brand-logo-img {
-  height: 115px;
+  height: 75px;
   width: auto;
-  max-width: 380px;
+  max-width: 320px;
   object-fit: contain;
   display: block;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: none;
+  transition: opacity 0.3s ease;
 }
 
-/* High Contrast Rules for Transparent Hero vs Scrolled White Header */
-.navbar-header:not(.scrolled):not(.menu-is-open) .brand-logo-img {
-  filter: brightness(0) invert(1);
-}
-
-.navbar-header.scrolled .brand-logo-img,
-.navbar-header.menu-is-open .brand-logo-img {
+.navbar-header .brand-logo-img {
   filter: none;
 }
 

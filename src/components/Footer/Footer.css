@@ -34,9 +34,9 @@
 }
 
 .footer-logo-img {
-  height: 48px;
+  height: 76px;
   width: auto;
-  max-width: 240px;
+  max-width: 360px;
   object-fit: contain;
   display: block;
 }

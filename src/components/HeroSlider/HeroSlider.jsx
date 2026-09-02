@@ -17,18 +17,6 @@ const SLIDES = [
   },
   {
     id: 2,
-    type: 'image',
-    image: '/assets/images/payday_sale.png',
-    subtitle: 'Limited Time Event',
-    title: 'PAYDAY SALE',
-    description: 'Up to 80% Off on House of Urvaah signature couture.',
-    cta: 'Shop Payday Sale',
-    ctaLink: '#collection',
-    theme: 'light',
-    minimalOverlay: true
-  },
-  {
-    id: 3,
     type: 'video',
     video: '/assets/video/Video1.mp4',
     poster: '/assets/images/poster1.jpg',
@@ -40,7 +28,7 @@ const SLIDES = [
     theme: 'dark'
   },
   {
-    id: 4,
+    id: 3,
     type: 'video',
     video: '/assets/video/Video2.mp4',
     poster: '/assets/images/poster2.jpg',

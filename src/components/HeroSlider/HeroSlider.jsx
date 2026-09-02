@@ -6,25 +6,26 @@ import './HeroSlider.css';
 const SLIDES = [
   {
     id: 1,
-    type: 'image',
-    image: '/assets/images/hero_editorial.jpg',
-    subtitle: 'Haute Couture / Floral Embroidery',
-    title: 'THE EMBROIDERED MINI SKIRT',
-    description: 'Intricate sequin motifs, hand-beaded detailing, and sun-drenched architectural tones.',
-    cta: 'Explore Collection',
+    type: 'video',
+    video: '/assets/video/Video1.mp4',
+    poster: '/assets/images/poster1.jpg',
+    subtitle: 'AUTUMN / WINTER COUTURE',
+    title: 'THE URVAAH COLLECTION',
+    description: 'Sculptural drapery, hand-beaded motifs, and modern luxury.',
+    cta: 'Discover Collection',
     ctaLink: '#collection',
     theme: 'dark'
   },
   {
     id: 2,
     type: 'video',
-    video: '/assets/video/Video1.mp4',
-    poster: '/assets/images/poster1.jpg',
-    subtitle: 'Autumn / Winter Couture',
-    title: 'THE URVAAH SILHOUETTE',
-    description: 'Sculptural drapery, hand-beaded motifs, and modern luxury.',
-    cta: 'Discover Couture',
-    ctaLink: '#new-in',
+    video: '/assets/video/Video2.mp4',
+    poster: '/assets/images/poster2.jpg',
+    subtitle: 'EDITORIAL CAMPAIGN',
+    title: 'METALLIC & SILK',
+    description: 'Intricate threadwork meets minimalist architectural tailoring.',
+    cta: 'View Editorial',
+    ctaLink: '#editorial',
     theme: 'dark'
   }
 ];

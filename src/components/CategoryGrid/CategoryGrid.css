@@ -1,0 +1,499 @@
+/* ==========================================================================
+   SHOP BY CATEGORY — Curated Moodboard Carousel (Black & White Editorial)
+   ========================================================================== */
+
+.category-moodboard-section {
+  padding: 3rem 0 5rem 0;
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.category-section-header {
+  text-align: left;
+  max-width: 1750px;
+  margin: 0 auto 2.25rem auto;
+  padding: 0 4.5rem;
+}
+
+.category-section-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  letter-spacing: 0.14em;
+  color: var(--gray-111);
+  text-transform: uppercase;
+}
+
+/* Widened Carousel Outer Viewport */
+.carousel-viewport-container {
+  position: relative;
+  max-width: 1750px;
+  margin: 0 auto;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4.5rem;
+}
+
+/* Arrow Navigation Buttons (Positioned just outside card row) */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s var(--ease-editorial);
+}
+
+.nav-btn-left {
+  left: 1.25rem;
+}
+
+.nav-btn-right {
+  right: 1.25rem;
+}
+
+.carousel-nav-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-50%) scale(1.06);
+}
+
+/* Carousel Cards Track Container */
+.moodboard-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Individual Card Position Rules & Depth Transformations */
+.moodboard-card-wrapper {
+  position: absolute;
+  width: 410px;
+  height: 540px;
+  transition: transform 0.38s cubic-bezier(0.65, 0, 0.35, 1), 
+              opacity 0.38s cubic-bezier(0.65, 0, 0.35, 1), 
+              z-index 0.38s ease;
+  user-select: none;
+}
+
+/* Center Featured Card */
+.moodboard-card-wrapper.card-center {
+  transform: translateX(0) scale(1.05);
+  opacity: 1;
+  z-index: 15;
+  cursor: default;
+}
+
+/* Adjacent Left & Right Peeking Cards (Widened offset for less cropping) */
+.moodboard-card-wrapper.card-left-1 {
+  transform: translateX(-104%) scale(0.86);
+  opacity: 0.72;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.moodboard-card-wrapper.card-right-1 {
+  transform: translateX(104%) scale(0.86);
+  opacity: 0.72;
+  z-index: 6;
+  cursor: pointer;
+}
+
+.moodboard-card-wrapper.card-left-2 {
+  transform: translateX(-180%) scale(0.7);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.moodboard-card-wrapper.card-right-2 {
+  transform: translateX(180%) scale(0.7);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.moodboard-card-wrapper.card-hidden {
+  transform: translateX(0) scale(0.6);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Inner Card Structure & Styling */
+.moodboard-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Neutral Swatch Collage Layer (Muted rectangular blocks behind model) */
+.swatch-bg-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.swatch-block {
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Theme 1: Dark Neutral Contrast */
+.theme-monochrome-1 .block-main {
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 70%;
+  height: 55%;
+  background-color: #e5e5e5;
+}
+
+.theme-monochrome-1 .block-accent-1 {
+  top: 4rem;
+  right: 1.5rem;
+  width: 45%;
+  height: 45%;
+  background-color: #111111;
+}
+
+.theme-monochrome-1 .block-accent-2 {
+  bottom: 3rem;
+  left: 2rem;
+  width: 60%;
+  height: 35%;
+  background-color: #ffffff;
+}
+
+/* Theme 2: Soft Gray Neutral Layers */
+.theme-monochrome-2 .block-main {
+  top: 2rem;
+  right: 1.5rem;
+  width: 75%;
+  height: 60%;
+  background-color: #efefef;
+}
+
+.theme-monochrome-2 .block-accent-1 {
+  top: 6rem;
+  left: 1.5rem;
+  width: 40%;
+  height: 40%;
+  background-color: #222222;
+}
+
+.theme-monochrome-2 .block-accent-2 {
+  bottom: 2rem;
+  right: 2rem;
+  width: 50%;
+  height: 35%;
+  background-color: #ffffff;
+}
+
+/* Theme 3: High-Contrast Pure Monochrome */
+.theme-monochrome-3 .block-main {
+  top: 1rem;
+  left: 2rem;
+  width: 65%;
+  height: 65%;
+  background-color: #ffffff;
+}
+
+.theme-monochrome-3 .block-accent-1 {
+  bottom: 4rem;
+  right: 1.5rem;
+  width: 55%;
+  height: 40%;
+  background-color: #1a1a1a;
+}
+
+.theme-monochrome-3 .block-accent-2 {
+  top: 5rem;
+  right: 3rem;
+  width: 35%;
+  height: 30%;
+  background-color: #dedede;
+}
+
+/* Model Cutout Container */
+.model-cutout-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  padding: 1.5rem 1.5rem 5rem 1.5rem;
+}
+
+.model-cutout-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 2px #ffffff, 0 12px 30px rgba(0, 0, 0, 0.12);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* Accessory / Detail Sticker Overlay (Top Right) */
+.sticker-detail-card {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 8;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 5px 10px 5px 5px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sticker-thumb-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.sticker-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticker-text-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sticker-sparkle-icon {
+  color: #111111;
+}
+
+.sticker-tag-name {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #111111;
+  white-space: nowrap;
+}
+
+/* Card Bottom Info Bar */
+.moodboard-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.4rem 1.4rem 1.4rem;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0) 100%);
+}
+
+.category-title-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.category-main-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.category-sub-title {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #666666;
+  text-transform: uppercase;
+}
+
+/* Pill-shaped "Shop All" Button */
+.shop-all-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  padding: 0.55rem 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s var(--ease-editorial), background-color 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Restrained Hover Effect: Only button scales up slightly */
+.shop-all-pill-btn:hover {
+  transform: scale(1.04);
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Progress Dots Row below Carousel */
+.carousel-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 3rem;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  border-radius: 12px;
+  background-color: #000000;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 1200px) {
+  .carousel-viewport-container {
+    padding: 0 3rem;
+  }
+  .moodboard-card-wrapper {
+    width: 360px;
+    height: 500px;
+  }
+  .moodboard-card-wrapper.card-left-1 {
+    transform: translateX(-94%) scale(0.85);
+  }
+  .moodboard-card-wrapper.card-right-1 {
+    transform: translateX(94%) scale(0.85);
+  }
+  .moodboard-carousel-track {
+    height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-moodboard-section {
+    padding: 4rem 0 3rem 0;
+  }
+  .category-section-header {
+    margin-bottom: 2.25rem;
+    padding: 0 1.25rem;
+  }
+  .carousel-viewport-container {
+    padding: 0 1rem;
+    min-height: 480px;
+  }
+  .moodboard-carousel-track {
+    height: 480px;
+  }
+  .moodboard-card-wrapper {
+    width: calc(100vw - 3rem);
+    max-width: 380px;
+    height: 460px;
+  }
+  /* On mobile, side cards are fully hidden to avoid clutter */
+  .moodboard-card-wrapper.card-left-1,
+  .moodboard-card-wrapper.card-right-1,
+  .moodboard-card-wrapper.card-left-2,
+  .moodboard-card-wrapper.card-right-2 {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+  }
+  .nav-btn-left {
+    left: 0.5rem;
+  }
+  .nav-btn-right {
+    right: 0.5rem;
+  }
+  .carousel-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .category-main-title {
+    font-size: 1.3rem;
+  }
+  .shop-all-pill-btn {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.64rem;
+  }
+  .carousel-dots-row {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-section-header {
+    padding: 0 1rem;
+  }
+  .moodboard-card-wrapper {
+    width: calc(100vw - 2.5rem);
+    height: 440px;
+  }
+  .moodboard-carousel-track {
+    height: 450px;
+  }
+  .nav-btn-left {
+    left: 0.25rem;
+  }
+  .nav-btn-right {
+    right: 0.25rem;
+  }
+}

@@ -1,0 +1,395 @@
+/* Collage Editorial Section Styling — Zara Asymmetric Grid Layouts */
+
+.editorial-collages-wrapper {
+  padding: 6rem 3rem 3rem 3rem;
+  background-color: var(--bg-main);
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.collage-block {
+  margin-bottom: 8rem;
+}
+
+.collage-block.craftsmanship-block {
+  margin-bottom: 5rem;
+}
+
+.block-header {
+  margin-bottom: 3.5rem;
+  max-width: 650px;
+}
+
+.block-number {
+  color: #000000;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.block-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.block-intro {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--gray-666);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Contained 01 — COLLECTION Outer Grid */
+.collection-grid-container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  height: 580px;
+  overflow: hidden;
+}
+
+.left-subgrid-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-subcol-main {
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-subcol-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right-video-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.full-height-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.half-height-container {
+  width: 100%;
+  height: calc(50% - 8px);
+  overflow: hidden;
+}
+
+.grid-captions-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  margin-top: 1.2rem;
+}
+
+.left-caption-box, .right-caption-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.overlay-script-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.overlay-script-badge span {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   02 — CRAFTSMANSHIP / SIGNATURE EMBROIDERY — Equal Row Height Zara Grid
+   ========================================================================= */
+.craftsmanship-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2.5rem;
+}
+
+.craftsmanship-tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.craftsmanship-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.craftsmanship-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s var(--ease-editorial);
+}
+
+.craftsmanship-tile:hover .craftsmanship-image-container img {
+  transform: scale(1.025);
+}
+
+.craftsmanship-caption-bar {
+  margin-top: 0.85rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.craftsmanship-caption-bar .tile-title {
+  color: #000000;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.craftsmanship-caption-bar .editorial-link {
+  color: #000000;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.craftsmanship-caption-bar .editorial-link:hover {
+  opacity: 0.7;
+}
+
+/* Common Tile Image Container */
+.tile-image-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.tile-image-container img,
+.tile-image-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-editorial);
+}
+
+.full-gown-img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Aspect Ratios for Collage Variety */
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-tall-editorial {
+  aspect-ratio: 2 / 3;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Captions */
+.tile-caption {
+  margin-top: 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tile-title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.editorial-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+/* Responsive Behavior & Breakpoints */
+@media (max-width: 1024px) {
+  .editorial-collages-wrapper {
+    padding: 5rem 2rem 3rem;
+  }
+  .collection-grid-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 2rem;
+  }
+  .left-subgrid-wrapper {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .left-subcol-stacked {
+    height: 100%;
+  }
+  .half-height-container {
+    height: calc(50% - 8px);
+  }
+  .right-video-wrapper {
+    height: 500px;
+  }
+  .grid-captions-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .craftsmanship-grid-layout {
+    gap: 2.5rem 2rem;
+  }
+  .collage-block {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-collages-wrapper {
+    padding: 4rem 1.25rem 2rem;
+  }
+  .block-header {
+    margin-bottom: 2rem;
+  }
+  .block-title {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+  }
+  .collection-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+  }
+  .left-subgrid-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: auto;
+  }
+  .left-subcol-main {
+    width: 100%;
+    height: auto;
+  }
+  .left-subcol-main .full-height-container {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  .left-subcol-stacked {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: auto;
+  }
+  .half-height-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  .right-video-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  .right-video-wrapper .full-height-container {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  .grid-captions-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+  }
+  .left-caption-box, .right-caption-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .craftsmanship-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .overlay-script-badge span {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .editorial-collages-wrapper {
+    padding: 3rem 1rem 1.5rem;
+  }
+  .block-header {
+    margin-bottom: 1.5rem;
+  }
+  .left-caption-box, .right-caption-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tile-title {
+    font-size: 0.75rem;
+  }
+  .overlay-script-badge {
+    bottom: 1.25rem;
+  }
+}

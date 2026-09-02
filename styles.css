@@ -1,0 +1,666 @@
+/* ==========================================================================
+   House of Urvaah — Design System & Stylesheet
+   Scope: Single-scroll editorial homepage
+   Visual Language: Minimalist, full-bleed imagery, Zara Woman aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens (Section 2)
+   -------------------------------------------------------------------------- */
+:root {
+  --ink: #0A0A0A;     /* primary text, logo, hairlines */
+  --paper: #FFFFFF;   /* primary background */
+  --bone: #F3F1EC;    /* alternating section background */
+  --stone: #B9B2A6;   /* dividers, borders, muted UI */
+  --ash: #6E6A64;     /* secondary/caption text */
+
+  /* Typography Stacks */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Le Jour Serif', 'Cormorant Garamond', 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
+  --font-script: 'Parfumerie Script', 'Alex Brush', 'Great Vibes', 'Bickham Script Pro', cursive;
+
+  /* Layout Spacing */
+  --header-height: 100px;
+  --text-max-width: 640px;
+}
+
+/* --------------------------------------------------------------------------
+   Web Font Declarations & Fallbacks
+   Note: Licensed font files (.woff2/.woff) for 'Parfumerie Script' and 'Le Jour Serif'
+   need to be added to /fonts/ directory when available. Using licensed font faces
+   with high-end editorial fallbacks.
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+@font-face {
+  font-family: 'Parfumerie Script';
+  src: local('Parfumerie Script'), local('ParfumerieScript');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Le Jour Serif';
+  src: local('Le Jour Serif'), local('LeJourSerif');
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Reset & Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+  overflow-x: hidden;
+}
+
+/* Accessible focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 1.5px solid var(--ink);
+  outline-offset: 4px;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. Centered Copy Container (capped around 640px per Section 3)
+   -------------------------------------------------------------------------- */
+.text-column {
+  max-width: var(--text-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Typography styles */
+.brand-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.brand-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   4. Fixed Header (Section 4)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background-color: transparent;
+  transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.header--solid {
+  background-color: var(--paper);
+  border-bottom-color: rgba(185, 178, 166, 0.25); /* subtle --stone border */
+}
+
+/* Brand Wordmark in Header */
+.header-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.header-logo-img {
+  height: 68px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease;
+}
+
+.header-brand:hover .header-logo-img {
+  opacity: 0.75;
+}
+
+/* Header Navigation Links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero — Video (Section 5)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  background-color: var(--ink);
+  overflow: hidden;
+}
+
+.hero-swiper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-swiper .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Low wordmark overlay on hero */
+.hero-overlay {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  color: #FFFFFF;
+  pointer-events: none;
+  width: 100%;
+  max-width: var(--text-max-width);
+  padding: 0 1.5rem;
+}
+
+.hero-title-script {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.hero-title-serif {
+  font-family: var(--font-serif);
+  font-size: 4.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   6. Collage Sections (Section 7)
+   Asymmetric Grids with non-uniform proportions
+   -------------------------------------------------------------------------- */
+.collage-section {
+  padding: 8rem 2rem;
+  background-color: var(--paper);
+}
+
+.collage-section.alt-bg {
+  background-color: var(--bone);
+}
+
+/* First Collage Grid Layout (Asymmetric 3-item grid) */
+.collage-grid-1 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-gap: 4rem 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.collage-item-tall {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.collage-item-landscape {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.collage-item-square {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  max-width: 85%;
+  margin-top: 1rem;
+}
+
+/* Second Collage Grid Layout (Different rhythm than the first) */
+.collage-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  grid-gap: 3.5rem 2.5rem;
+  max-width: 1350px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.grid2-slot-1 {
+  grid-column: 1 / 2;
+  transform: translateY(2rem);
+}
+
+.grid2-slot-2 {
+  grid-column: 2 / 3;
+}
+
+.grid2-slot-3 {
+  grid-column: 3 / 4;
+  transform: translateY(-2rem);
+}
+
+/* Image Container & Editorial Captions */
+.image-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  background-color: var(--bone);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Specific aspect ratios for Zara-like rhythm */
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-tall-editorial {
+  aspect-ratio: 2 / 3;
+}
+
+.caption-text {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ash);
+  margin-top: 0.85rem;
+  text-align: left;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   7. Statement Break & Marquee (Section 8)
+   -------------------------------------------------------------------------- */
+.statement-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  background-color: var(--ink);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statement-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  filter: grayscale(15%);
+}
+
+.statement-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 2rem;
+}
+
+.statement-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+/* Continuous Marquee Strip (Section 8) */
+.marquee-strip {
+  width: 100%;
+  background-color: var(--bone);
+  color: var(--ink);
+  border-top: 1px solid var(--stone);
+  border-bottom: 1px solid var(--stone);
+  padding: 1.1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.marquee-item::after {
+  content: '·';
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--stone);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Minimal Footer (Section 9)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: 7rem 2rem 4rem 2rem;
+  border-top: 1px solid rgba(185, 178, 166, 0.3);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3.5rem;
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Newsletter Form */
+.newsletter-form-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.newsletter-label {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.4rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  padding: 0.5rem 0;
+}
+
+.newsletter-input::placeholder {
+  color: var(--ash);
+  font-weight: 300;
+}
+
+.newsletter-submit {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0.5rem 0 0.5rem 1rem;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+}
+
+.newsletter-submit:hover {
+  opacity: 0.6;
+}
+
+.newsletter-feedback {
+  font-size: 0.75rem;
+  color: var(--ash);
+  margin-top: 0.75rem;
+  min-height: 1.2rem;
+}
+
+/* Social Links & Copyright */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.social-link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.copyright-text {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ash);
+}
+
+/* --------------------------------------------------------------------------
+   9. Motion Accessibility (Section 6 & 10)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    transition: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .site-header {
+    transition: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .site-header {
+    padding: 0 1.5rem;
+  }
+  .header-nav {
+    gap: 1.5rem;
+  }
+  .nav-link {
+    font-size: 0.7rem;
+  }
+
+  .hero-title-script {
+    font-size: 1.75rem;
+  }
+  .hero-title-serif {
+    font-size: 2.5rem;
+  }
+
+  /* Stack Collage 1 */
+  .collage-grid-1 {
+    grid-template-columns: 1fr;
+    grid-gap: 3.5rem;
+  }
+  .collage-item-tall,
+  .collage-item-landscape,
+  .collage-item-square {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  /* Stack Collage 2 */
+  .collage-grid-2 {
+    grid-template-columns: 1fr;
+    grid-gap: 3.5rem;
+  }
+  .grid2-slot-1,
+  .grid2-slot-2,
+  .grid2-slot-3 {
+    grid-column: 1 / -1;
+    transform: none;
+  }
+
+  .statement-section {
+    height: 70vh;
+  }
+}

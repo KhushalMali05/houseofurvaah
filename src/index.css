@@ -1,0 +1,135 @@
+/* ==========================================================================
+   HOUSE OF URVAAH — EDITORIAL DESIGN SYSTEM
+   Strict Monochrome Palette | Zara-inspired minimalism | Restrained typography
+   ========================================================================== */
+
+:root {
+  --bg-main: #ffffff;
+  --text-primary: #000000;
+  --text-muted: #666666;
+  --border-light: #eeeeee;
+  --gray-111: #111111;
+  --gray-666: #666666;
+  --gray-ccc: #cccccc;
+  --gray-f5: #f5f5f5;
+  --scrim-dark: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+  --scrim-top: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  
+  /* Typography Families */
+  --font-script: 'Parisienne', cursive;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Easing */
+  --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.25s var(--ease-editorial);
+  --transition-medium: 0.5s var(--ease-editorial);
+  --transition-slow: 0.8s var(--ease-editorial);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Common UI Utility Typography */
+.ui-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.brand-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.brand-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Editorial Button / Link underlines */
+.editorial-link {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0.4);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.editorial-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Reduced Motion Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

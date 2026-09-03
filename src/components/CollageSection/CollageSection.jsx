@@ -112,8 +112,8 @@ export default function CollageSection() {
                   delay={200}
                 />
                 <img 
-                  src="/assets/images/product5.jpeg" 
-                  alt="Maroon lace back corset detail"
+                  src="/assets/images/blue_gold_back.png" 
+                  alt="Blue and gold blouse back detail"
                   loading="lazy" 
                 />
               </div>
@@ -149,7 +149,7 @@ export default function CollageSection() {
         {/* Unified Caption Bar Below Grid */}
         <div className="grid-captions-row">
           <div className="left-caption-box">
-            <span className="tile-title">Maroon Lace Two-Piece Couture</span>
+            <span className="tile-title">Aqua Gold Two-Piece Couture</span>
             <a href="#shop" className="editorial-link">Shop the look</a>
           </div>
           <div className="right-caption-box">

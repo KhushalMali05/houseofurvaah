@@ -104,7 +104,7 @@ export default function Footer() {
             <span className="ui-label footer-col-title">Collections</span>
             <ul className="footer-links-list">
               <li><a href="#new-in">New Arrivals</a></li>
-              <li><a href="#collection">Autumn Edit</a></li>
+              <li><a href="#collection">Signature Edit</a></li>
               <li><a href="#products">Signature Pieces</a></li>
               <li><a href="#editorial">Campaign 2026</a></li>
             </ul>

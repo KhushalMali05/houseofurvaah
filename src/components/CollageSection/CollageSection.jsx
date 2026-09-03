@@ -47,9 +47,9 @@ export default function CollageSection() {
       <div className="collage-block" id="new-in">
         <div className="block-header">
           <span className="ui-label block-number">01 — COLLECTION</span>
-          <h2 className="brand-serif block-title">THE AUTUMN EDIT</h2>
+          <h2 className="brand-serif block-title">THE SIGNATURE EDIT</h2>
           <p className="block-intro">
-            A restrained collection defined by subtle hand-embroidered sequin floral motifs and crisp, architectural cuts.
+            A restrained collection defined by hand-embroidered zari threadwork and architectural tailoring.
           </p>
         </div>
 

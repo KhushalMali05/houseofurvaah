@@ -218,23 +218,21 @@ export default function CategoryGrid() {
                   
                   {/* Full Bleed Flush Model Image Tile */}
                   <div className="model-cutout-container">
-                    {/* placeholder stock image — swap for real category photography */}
                     <img
                       src={cat.image}
                       alt={cat.title}
                       className="model-cutout-img"
                       loading="lazy"
                     />
+                    {/* Rectangular Black Tag Overlay */}
+                    <ProductTag 
+                      label={cat.tag} 
+                      position="top-right" 
+                      variant="dark" 
+                    />
                   </div>
 
-                  {/* Rectangular Black Tag Overlay */}
-                  <ProductTag 
-                    label={cat.tag} 
-                    position="top-right" 
-                    variant="dark" 
-                  />
-
-                  {/* Bottom Info Bar: Two-Line Category Title + Shop All Text Link */}
+                  {/* Bottom Info Bar: Two-Line Category Title + Shop All Text Link (Below Image) */}
                   <div className="moodboard-bottom-bar">
                     <div className="category-title-lockup">
                       <h3 className="brand-serif category-main-title">{cat.title}</h3>

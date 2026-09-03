@@ -76,8 +76,8 @@ export default function CollageSection() {
                   delay={0}
                 />
                 <img 
-                  src="/assets/images/product6.jpeg" 
-                  alt="Maroon hand-embroidered lace two-piece gown"
+                  src="/assets/images/blue_gold_set.png" 
+                  alt="Blue and gold hand-woven two-piece set"
                   className="full-gown-img"
                   loading="lazy" 
                 />

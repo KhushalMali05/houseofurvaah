@@ -38,23 +38,23 @@
   padding: 0 4.5rem;
 }
 
-/* Arrow Navigation Buttons (Positioned just outside card row) */
+/* Arrow Navigation Buttons (Flat minimal treatment) */
 .carousel-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: transparent;
   color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 30;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   transition: all 0.3s var(--ease-editorial);
 }
 
@@ -70,7 +70,7 @@
   background-color: #000000;
   color: #ffffff;
   border-color: #000000;
-  transform: translateY(-50%) scale(1.06);
+  transform: translateY(-50%);
 }
 
 /* Carousel Cards Track Container */
@@ -138,108 +138,19 @@
   pointer-events: none;
 }
 
-/* Inner Card Structure & Styling */
+/* Inner Card Structure & Styling (Borderless, flush image tile with zero drop shadows) */
 .moodboard-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 0px;
   overflow: hidden;
-  background-color: #f7f7f7;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  background-color: #f5f5f5;
+  border: none;
+  box-shadow: none;
 }
 
-/* Neutral Swatch Collage Layer (Muted rectangular blocks behind model) */
-.swatch-bg-collage {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.swatch-block {
-  position: absolute;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-/* Theme 1: Dark Neutral Contrast */
-.theme-monochrome-1 .block-main {
-  top: 1.5rem;
-  left: 1.5rem;
-  width: 70%;
-  height: 55%;
-  background-color: #e5e5e5;
-}
-
-.theme-monochrome-1 .block-accent-1 {
-  top: 4rem;
-  right: 1.5rem;
-  width: 45%;
-  height: 45%;
-  background-color: #111111;
-}
-
-.theme-monochrome-1 .block-accent-2 {
-  bottom: 3rem;
-  left: 2rem;
-  width: 60%;
-  height: 35%;
-  background-color: #ffffff;
-}
-
-/* Theme 2: Soft Gray Neutral Layers */
-.theme-monochrome-2 .block-main {
-  top: 2rem;
-  right: 1.5rem;
-  width: 75%;
-  height: 60%;
-  background-color: #efefef;
-}
-
-.theme-monochrome-2 .block-accent-1 {
-  top: 6rem;
-  left: 1.5rem;
-  width: 40%;
-  height: 40%;
-  background-color: #222222;
-}
-
-.theme-monochrome-2 .block-accent-2 {
-  bottom: 2rem;
-  right: 2rem;
-  width: 50%;
-  height: 35%;
-  background-color: #ffffff;
-}
-
-/* Theme 3: High-Contrast Pure Monochrome */
-.theme-monochrome-3 .block-main {
-  top: 1rem;
-  left: 2rem;
-  width: 65%;
-  height: 65%;
-  background-color: #ffffff;
-}
-
-.theme-monochrome-3 .block-accent-1 {
-  bottom: 4rem;
-  right: 1.5rem;
-  width: 55%;
-  height: 40%;
-  background-color: #1a1a1a;
-}
-
-.theme-monochrome-3 .block-accent-2 {
-  top: 5rem;
-  right: 3rem;
-  width: 35%;
-  height: 30%;
-  background-color: #dedede;
-}
-
-/* Model Cutout Container */
+/* Full-bleed Model Image Container & Crisp Image Tile */
 .model-cutout-container {
   position: absolute;
   inset: 0;
@@ -247,7 +158,8 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
-  padding: 1.5rem 1.5rem 5rem 1.5rem;
+  padding: 0;
+  overflow: hidden;
 }
 
 .model-cutout-img {
@@ -255,63 +167,16 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 0 2px #ffffff, 0 12px 30px rgba(0, 0, 0, 0.12);
-  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+  filter: none;
+  transition: transform 0.8s var(--ease-editorial);
 }
 
-/* Accessory / Detail Sticker Overlay (Top Right) */
-.sticker-detail-card {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 8;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 5px 10px 5px 5px;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.sticker-thumb-box {
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-}
-
-.sticker-thumb-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sticker-text-box {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.sticker-sparkle-icon {
-  color: #111111;
-}
-
-.sticker-tag-name {
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #111111;
-  white-space: nowrap;
+/* Standard Editorial Hover State: Crisp 1.0 -> 1.025 Scale Transition (No Blur) */
+.moodboard-card-wrapper:hover .model-cutout-img {
+  transform: scale(1.025);
 }
 
 /* Card Bottom Info Bar */
@@ -337,75 +202,77 @@
 
 .category-main-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 400;
+  letter-spacing: -0.01em;
   color: #000000;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .category-sub-title {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
-  font-weight: 600;
+  font-size: 0.62rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   color: #666666;
   text-transform: uppercase;
 }
 
-/* Pill-shaped "Shop All" Button */
-.shop-all-pill-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #ffffff;
+/* Minimal Editorial "Shop All" Text Link */
+.shop-all-link {
   color: #000000;
-  border: 1px solid #000000;
-  border-radius: 50px;
-  padding: 0.55rem 1.15rem;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s var(--ease-editorial), background-color 0.25s ease, color 0.25s ease;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
+  padding-bottom: 2px;
 }
 
-/* Restrained Hover Effect: Only button scales up slightly */
-.shop-all-pill-btn:hover {
-  transform: scale(1.04);
-  background-color: #000000;
-  color: #ffffff;
+.shop-all-link:hover {
+  opacity: 0.65;
 }
 
-/* Progress Dots Row below Carousel */
+/* Thin-Line Progress Indicators below Carousel (Hero slider alignment) */
 .carousel-dots-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 3rem;
+  margin-top: 2.75rem;
 }
 
 .carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 36px;
+  height: 24px;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-dot.active {
-  width: 28px;
-  border-radius: 12px;
+.carousel-dot::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot.active::after {
   background-color: #000000;
+  transform: scaleY(1.8);
 }
 
 /* Responsive Styling for Mobile */
@@ -468,11 +335,10 @@
     height: 40px;
   }
   .category-main-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
-  .shop-all-pill-btn {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.64rem;
+  .shop-all-link {
+    font-size: 0.65rem;
   }
   .carousel-dots-row {
     margin-top: 2rem;

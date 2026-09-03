@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ShoppingBag, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ProductTag from '../ProductTag/ProductTag';
 import './CategoryGrid.css';
 
 const CATEGORY_SLIDES = [
@@ -215,14 +216,7 @@ export default function CategoryGrid() {
               >
                 <div className="moodboard-card-inner">
                   
-                  {/* Stacked Neutral Swatch/Backdrop Blocks */}
-                  <div className="swatch-bg-collage">
-                    <div className="swatch-block block-main" />
-                    <div className="swatch-block block-accent-1" />
-                    <div className="swatch-block block-accent-2" />
-                  </div>
-
-                  {/* Cutout Model Image */}
+                  {/* Full Bleed Flush Model Image Tile */}
                   <div className="model-cutout-container">
                     {/* placeholder stock image — swap for real category photography */}
                     <img
@@ -233,27 +227,22 @@ export default function CategoryGrid() {
                     />
                   </div>
 
-                  {/* Accessory / Detail Sticker Overlay */}
-                  <div className="sticker-detail-card">
-                    <div className="sticker-thumb-box">
-                      <img src={cat.detailThumb} alt="Detail decode" loading="lazy" />
-                    </div>
-                    <div className="sticker-text-box">
-                      <Sparkles size={11} className="sticker-sparkle-icon" />
-                      <span className="sticker-tag-name">{cat.tag}</span>
-                    </div>
-                  </div>
+                  {/* Rectangular Black Tag Overlay */}
+                  <ProductTag 
+                    label={cat.tag} 
+                    position="top-right" 
+                    variant="dark" 
+                  />
 
-                  {/* Bottom Info Bar: Two-Line Category Title + Shop All Pill Button */}
+                  {/* Bottom Info Bar: Two-Line Category Title + Shop All Text Link */}
                   <div className="moodboard-bottom-bar">
                     <div className="category-title-lockup">
                       <h3 className="brand-serif category-main-title">{cat.title}</h3>
                       <span className="ui-label category-sub-title">{cat.subtitle}</span>
                     </div>
 
-                    <a href="#category" className="shop-all-pill-btn">
-                      <span>Shop All</span>
-                      <ShoppingBag size={14} />
+                    <a href="#category" className="shop-all-link">
+                      Shop All
                     </a>
                   </div>
 

@@ -17,7 +17,7 @@
   /* Typography Stacks */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-serif: 'Le Jour Serif', 'Cormorant Garamond', 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
-  --font-script: 'Parfumerie Script', 'Alex Brush', 'Great Vibes', 'Bickham Script Pro', cursive;
+  --font-script: 'Parfumerie Script', 'Alex Brush', 'Great Vibes', 'Pinyon Script', 'Parisienne', cursive;
 
   /* Layout Spacing */
   --header-height: 100px;
@@ -30,7 +30,7 @@
    need to be added to /fonts/ directory when available. Using licensed font faces
    with high-end editorial fallbacks.
    -------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 
 @font-face {
   font-family: 'Parfumerie Script';

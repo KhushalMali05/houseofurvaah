@@ -16,7 +16,7 @@
   --scrim-top: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
   
   /* Typography Families */
-  --font-script: 'Parisienne', cursive;
+  --font-script: 'Parfumerie Script', 'Alex Brush', 'Great Vibes', 'Pinyon Script', 'Parisienne', cursive;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   

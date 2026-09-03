@@ -6,10 +6,9 @@ import './HeroSlider.css';
 const SLIDES = [
   {
     id: 1,
-    type: 'video',
-    video: '/assets/video/Video1.mp4',
-    poster: '/assets/images/poster1.jpg',
-    subtitle: 'AUTUMN / WINTER COUTURE',
+    type: 'image',
+    image: '/assets/images/hero_campaign.jpg',
+    subtitle: 'HIGH FASHION / CAMPAIGN 2026',
     title: 'THE URVAAH COLLECTION',
     description: 'Sculptural drapery, hand-beaded motifs, and modern luxury.',
     cta: 'Discover Collection',
@@ -18,14 +17,13 @@ const SLIDES = [
   },
   {
     id: 2,
-    type: 'video',
-    video: '/assets/video/Video2.mp4',
-    poster: '/assets/images/poster2.jpg',
+    type: 'image',
+    image: '/assets/images/hero_campaign.jpg',
     subtitle: 'EDITORIAL CAMPAIGN',
-    title: 'METALLIC & SILK',
+    title: 'FLORAL & EMBROIDERED',
     description: 'Intricate threadwork meets minimalist architectural tailoring.',
-    cta: 'View Editorial',
-    ctaLink: '#editorial',
+    cta: 'View Collection',
+    ctaLink: '#new-in',
     theme: 'dark'
   }
 ];

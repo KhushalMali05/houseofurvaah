@@ -76,8 +76,8 @@ export default function CollageSection() {
                   delay={0}
                 />
                 <img 
-                  src="/assets/images/blue_gold_set.png" 
-                  alt="Blue and gold hand-woven two-piece set"
+                  src="/assets/images/product6.jpeg" 
+                  alt="Maroon hand-embroidered lace two-piece gown"
                   className="full-gown-img"
                   loading="lazy" 
                 />
@@ -87,7 +87,7 @@ export default function CollageSection() {
               </div>
             </div>
 
-            {/* Right Sub-column: Stacked Bodice & Back Corset Details (product4.jpeg & product5.jpeg) */}
+            {/* Right Sub-column: Stacked Bodice & Back Corset Details (blue_gold_set.png & product5.jpeg) */}
             <div className="left-subcol-stacked">
               <div className="tile-image-container half-height-container">
                 <ProductTag 
@@ -98,8 +98,8 @@ export default function CollageSection() {
                   delay={100}
                 />
                 <img 
-                  src="/assets/images/product4.jpeg" 
-                  alt="Maroon lace bodice front detail"
+                  src="/assets/images/blue_gold_set.png" 
+                  alt="Blue and gold hand-woven two-piece set"
                   loading="lazy" 
                 />
               </div>

@@ -11,6 +11,10 @@
   margin-bottom: 8rem;
 }
 
+.collage-block:last-child {
+  margin-bottom: 0;
+}
+
 .collage-block.craftsmanship-block {
   margin-bottom: 5rem;
 }
